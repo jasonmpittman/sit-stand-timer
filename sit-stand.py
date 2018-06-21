@@ -6,6 +6,7 @@
 # Purpose: a sit stand move timer for notifications at a standing desk
 # Explanation: 
 import time
+import winsound
 
 class StateTimer():
     def __init__(self):
@@ -38,5 +39,12 @@ class State():
             return self.st
 
 def main():
+    
+    winsound.PlaySound("SystemExit", winsound.SND_ALIAS) #sit
+    winsound.PlaySound("SystemHand", winsound.SND_ALIAS) #stand
+    winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS) #move
+    
     st = StateTimer()
     s = State()
+
+main()
